@@ -829,7 +829,7 @@
         font-size: 18px;
     }
     .contact-form input, .contact-form textarea {
-        box-shadow: 0 0 65px 0 #e9eefc;
+        box-shadow: none;
     }
     
     .tastimonials-con{
@@ -1005,9 +1005,7 @@
     .blog-box-item {
         width: 330px;
     }
-    .contact-form input, .contact-form textarea {
-        box-shadow: 0 0 30px 0 #e9eefc;
-    }
+    
     .dynamic-txts {
         height: 36px;
     }

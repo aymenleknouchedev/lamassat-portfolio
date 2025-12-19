@@ -37,9 +37,7 @@
 
             <!-- Email & Phone Section -->
             <div style="margin-bottom: 2rem;">
-                <h3 style="color: var(--blue); font-size: 1.1rem; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
-                    <i class="fas fa-phone-alt"></i> Contact Information
-                </h3>
+               
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
                     <!-- Contact Email -->

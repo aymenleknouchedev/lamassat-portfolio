@@ -112,15 +112,15 @@
                             </div>
                             <div class="col-lg-5 col-sm-12">
                                 <div class="banner-right-con position-relative wow slideInRight" id="banner-right-con">
-                                    <figure class="mb-0">
-                                        @if ($user->photo)
-                                            <img src="{{ asset('storage/' . $user->photo) }}" alt="{{ $user->name }}"
-                                                id="banner-right-img" class="img-fluid" style="object-fit: cover; height: 500px;">
-                                        @else
-                                            <img src="{{ asset('template/assets/image/banner-right-img.png') }}" alt="banner-right-img"
-                                                id="banner-right-img" class="img-fluid">
-                                        @endif
-                                    </figure>
+                                    <div class="hero-image-circle">
+                                        <figure class="mb-0">
+                                            @if ($user->photo)
+                                                <img src="{{ asset('storage/' . $user->photo) }}" alt="{{ $user->name }}">
+                                            @else
+                                                <img src="{{ asset('template/assets/image/banner-right-img.png') }}" alt="banner-right-img">
+                                            @endif
+                                        </figure>
+                                    </div>
                                     <div class="cursor"></div>
                                     <div class="cursor2"></div>
                                 </div>
