@@ -15,9 +15,7 @@
     @include('layouts.partials.success-modal')
 
     <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
-        <h2 style="color: var(--blue); margin-bottom: 2rem; display: flex; align-items: center; gap: 0.5rem;">
-            <i class="fas fa-user-circle"></i> My Profile
-        </h2>
+        
 
         @if ($errors->any())
             <div style="background: #fee; border: 1px solid #fcc; color: #c33; padding: 1rem; border-radius: 4px; margin-bottom: 2rem;">

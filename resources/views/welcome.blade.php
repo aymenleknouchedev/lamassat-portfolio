@@ -24,40 +24,41 @@
                     <div class="header-con">
                         <div class="max-con">
                             <nav class="navbar navbar-expand-lg navbar-light p-0">
-                            <a class="navbar-brand p-0" href="/">
-                                <img src="{{ asset('template/assets/image/logo-img.png') }}" alt="logo-img" class="img-fluid">
-                            </a>
-                            <button class="navbar-toggler p-0 collapsed" type="button" data-toggle="collapse"
-                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                                <span class="navbar-toggler-icon"></span>
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-                                <ul class="navbar-nav ml-auto">
-                                    <li class="nav-item active pl-0">
-                                        <a class="nav-link p-0 is-active" href="#home">Home<span
-                                                class="sr-only">(current)</span></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link p-0" href="#service-con">Skills</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link p-0" href="#Portfolio">Portfolio</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link p-0" href="#testimonials">Testimonials</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link p-0" href="#blog">Articles</a>
-                                    </li>
-                                </ul>
-                                <div class="d-inline-block contact">
-                                    <a href="#Contact">Contact</a>
+                                <a class="navbar-brand p-0" href="/">
+                                    <img src="{{ asset('template/assets/image/logo-img.png') }}" alt="logo-img"
+                                        class="img-fluid">
+                                </a>
+                                <button class="navbar-toggler p-0 collapsed" type="button" data-toggle="collapse"
+                                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                    <span class="navbar-toggler-icon"></span>
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                                    <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item active pl-0">
+                                            <a class="nav-link p-0 is-active" href="#home">Home<span
+                                                    class="sr-only">(current)</span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link p-0" href="#service-con">Skills</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link p-0" href="#Portfolio">Portfolio</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link p-0" href="#testimonials">Testimonials</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link p-0" href="#blog">Articles</a>
+                                        </li>
+                                    </ul>
+                                    <div class="d-inline-block contact">
+                                        <a href="#Contact">Contact</a>
+                                    </div>
                                 </div>
-                            </div>
-                        </nav>
+                            </nav>
                         </div>
                     </div>
                 </div>
@@ -98,7 +99,7 @@
                                             <li>
                                                 <h1>{{ $user->name }}</h1>
                                             </li>
-                                           
+
                                         </ul>
                                         <p>{{ $user->bio ?? 'Welcome to my portfolio' }}<br>
                                             Professional designer and developer
@@ -115,9 +116,11 @@
                                     <div class="hero-image-circle">
                                         <figure class="mb-0">
                                             @if ($user->photo)
-                                                <img src="{{ asset('storage/' . $user->photo) }}" alt="{{ $user->name }}">
+                                                <img src="{{ asset('storage/' . $user->photo) }}"
+                                                    alt="{{ $user->name }}">
                                             @else
-                                                <img src="{{ asset('template/assets/image/banner-right-img.png') }}" alt="banner-right-img">
+                                                <img src="{{ asset('template/assets/image/banner-right-img.png') }}"
+                                                    alt="banner-right-img">
                                             @endif
                                         </figure>
                                     </div>
@@ -146,33 +149,38 @@
                 <div class="service-box wow fadeInUp">
                     <div class="row">
                         @forelse ($skills as $index => $skill)
-                            <div class="col-lg-6 col-md-6 {{ $index === count($skills) - 1 && count($skills) % 2 !== 0 ? 'mb-0' : '' }}">
+                            <div
+                                class="col-lg-6 col-md-6 {{ $index === count($skills) - 1 && count($skills) % 2 !== 0 ? 'mb-0' : '' }}">
                                 <div class="service-box-item {{ $index === count($skills) - 1 ? 'mb-0' : '' }}">
                                     <figure class="mb-0">
-                                        <i class="{{ $skill->icon ?? 'fas fa-code' }} d-flex align-items-center justify-content-center" style="font-size: 3rem; color: #4a90e2;"></i>
+                                        <i class="{{ $skill->icon ?? 'fas fa-code' }} d-flex align-items-center justify-content-center"
+                                            style="font-size: 3rem; color: #4a90e2;"></i>
                                     </figure>
                                     <div class="service-box-item-content">
                                         <h4>{{ $skill->name }}</h4>
-                                        <p>{{ substr(strip_tags($skill->description), 0, 80) }}{{ strlen(strip_tags($skill->description)) > 80 ? '...' : '' }}</p>
-                                        <a href="#" data-toggle="modal" data-target="#skill-modal-{{ $index }}">Read More</a>
+                                        <p>{{ substr(strip_tags($skill->description), 0, 80) }}{{ strlen(strip_tags($skill->description)) > 80 ? '...' : '' }}
+                                        </p>
+                                        <a href="#" data-toggle="modal"
+                                            data-target="#skill-modal-{{ $index }}">Read More</a>
                                     </div>
                                 </div>
                             </div>
                             @if (($index + 1) % 2 === 0)
-                </div>
-                <div class="row {{ $index === count($skills) - 1 ? 'mb-0' : '' }}">
-                            @endif
-                        @empty
-                            <div class="col-12">
-                                <div class="alert alert-info">No skills added yet. <a href="/login">Login to add skills</a></div>
-                            </div>
+                    </div>
+                    <div class="row {{ $index === count($skills) - 1 ? 'mb-0' : '' }}">
+                        @endif
+                    @empty
+                        <div class="col-12">
+                            <div class="alert alert-info">No skills added yet. <a href="/login">Login to add
+                                    skills</a></div>
+                        </div>
                         @endforelse
                         @if (count($skills) % 2 !== 0 && count($skills) > 0)
-                </div>
-                        @endif
                     </div>
+                    @endif
                 </div>
             </div>
+        </div>
         </div>
     </section>
     <!-- service section -->
@@ -186,7 +194,8 @@
             <div id="myBtnContainer" class="text-center">
                 <button class=" active active_button" onclick="filterSelection('all')"> All </button>
                 @forelse ($projects->pluck('title')->unique()->take(4) as $title)
-                    <button class="" onclick="filterSelection('{{ strtolower(str_replace(' ', '_', $title)) }}')">{{ $title }}</button>
+                    <button class=""
+                        onclick="filterSelection('{{ strtolower(str_replace(' ', '_', $title)) }}')">{{ $title }}</button>
                 @empty
                     <button class="" onclick="filterSelection('products')">Skill</button>
                 @endforelse
@@ -203,9 +212,11 @@
                             <div class="portfolio-img position-relative">
                                 <figure>
                                     @if ($project->image)
-                                        <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->title }}" class="img-fluid">
+                                        <img src="{{ asset('storage/' . $project->image) }}"
+                                            alt="{{ $project->title }}" class="img-fluid">
                                     @else
-                                        <img src="{{ asset('template/assets/image/portfolio-img1.png') }}" alt="{{ $project->title }}" class="img-fluid">
+                                        <img src="{{ asset('template/assets/image/portfolio-img1.png') }}"
+                                            alt="{{ $project->title }}" class="img-fluid">
                                     @endif
                                 </figure>
                             </div>
@@ -213,28 +224,26 @@
                         <div class="portfolio-img-content text-left">
                             <div class="portfolio-img-title d-inline-block">
                                 <h4>{{ $project->title }}</h4>
-                                <p>{{ substr(strip_tags($project->description), 0, 50) }}{{ strlen(strip_tags($project->description)) > 50 ? '...' : '' }}</p>
+                                <p>{{ substr(strip_tags($project->description), 0, 50) }}{{ strlen(strip_tags($project->description)) > 50 ? '...' : '' }}
+                                </p>
                             </div>
-                            <a href="{{ $project->url ?? '#' }}" class="float-lg-right" {{ $project->url ? 'target="_blank"' : '' }}>
-                                <i class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i>
-                            </a>
                         </div>
                     </div>
                 @empty
-                    <div class="alert alert-info w-100">No projects yet. <a href="/login">Login to add projects</a></div>
+                    <div class="alert alert-info w-100">No projects yet. <a href="/login">Login to add projects</a>
+                    </div>
                 @endforelse
             </div>
         </div>
     </section>
-                        </div>
-                        <a href="#" class="float-lg-right" data-toggle="modal"
-                            data-target="#modalporfolio5-icon"><i
-                                class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
-                    </div>
+    </div>
+    <a href="#" class="float-lg-right" data-toggle="modal" data-target="#modalporfolio5-icon"><i
+            class="fas fa-arrow-right d-flex align-items-center justify-content-center"></i></a>
+    </div>
 
-                </div>
-            </div>
-        </div>
+    </div>
+    </div>
+    </div>
     </section>
     <!-- portfolio section -->
     <!-- tastimonials section -->
@@ -246,7 +255,8 @@
                 <div class="col-lg-5">
                     <div class="tastimonials-left-con wow slideInLeft">
                         <figure class="mb-0">
-                            <img src="{{ asset('template/assets/image/tastimonials-img.png') }}" alt="tastimonials-img" class="img-fluid">
+                            <img src="{{ asset('template/assets/image/tastimonials-img.png') }}"
+                                alt="tastimonials-img" class="img-fluid">
                         </figure>
                     </div>
                 </div>
@@ -259,7 +269,8 @@
                                         <h6>Testimonials</h6>
                                         <h2>Happy Clients Feedback</h2>
                                         <figure class="mb-0">
-                                            <img src="{{ asset('template/assets/image/comma-icon.png') }}" alt="comma-icon" class="img-fluid">
+                                            <img src="{{ asset('template/assets/image/comma-icon.png') }}"
+                                                alt="comma-icon" class="img-fluid">
                                         </figure>
                                         <div class="testimonials-inner-content">
                                             <p>{{ $review->content }}</p>
@@ -274,7 +285,8 @@
                                         <h6>Testimonials</h6>
                                         <h2>Happy Clients Feedback</h2>
                                         <figure class="mb-0">
-                                            <img src="{{ asset('template/assets/image/comma-icon.png') }}" alt="comma-icon" class="img-fluid">
+                                            <img src="{{ asset('template/assets/image/comma-icon.png') }}"
+                                                alt="comma-icon" class="img-fluid">
                                         </figure>
                                         <div class="testimonials-inner-content">
                                             <p>No testimonials yet. <a href="/login">Login to add reviews</a></p>
@@ -315,12 +327,15 @@
                             <div class="col-lg-4">
                                 <div class="blog-box-item">
                                     <div class="blog-img">
-                                        <a href="{{ $article->external_link ?? '#' }}" {{ $article->external_link ? 'target="_blank"' : '' }}>
+                                        <a href="{{ $article->external_link ?? '#' }}"
+                                            {{ $article->external_link ? 'target="_blank"' : '' }}>
                                             <figure class="mb-0">
                                                 @if ($article->featured_image)
-                                                    <img src="{{ $article->featured_image }}" alt="{{ $article->title }}" class="img-fluid">
+                                                    <img src="{{ $article->featured_image }}"
+                                                        alt="{{ $article->title }}" class="img-fluid">
                                                 @else
-                                                    <img src="{{ asset('template/assets/image/blog-img-1.png') }}" alt="{{ $article->title }}" class="img-fluid">
+                                                    <img src="{{ asset('template/assets/image/blog-img-1.png') }}"
+                                                        alt="{{ $article->title }}" class="img-fluid">
                                                 @endif
                                             </figure>
                                         </a>
@@ -328,19 +343,24 @@
                                     <div class="blog-content">
                                         <div class="blog-auteher-title">
                                             <span>{{ $article->source ?? 'Article' }}</span>
-                                            <span class="float-lg-right">{{ $article->publication_date ? $article->publication_date->format('M d, Y') : $article->created_at->format('M d, Y') }}</span>
+                                            <span
+                                                class="float-lg-right">{{ $article->publication_date ? $article->publication_date->format('M d, Y') : $article->created_at->format('M d, Y') }}</span>
                                         </div>
-                                        <a href="{{ $article->external_link ?? '#' }}" {{ $article->external_link ? 'target="_blank"' : '' }}>
+                                        <a href="{{ $article->external_link ?? '#' }}"
+                                            {{ $article->external_link ? 'target="_blank"' : '' }}>
                                             <h4>{{ $article->title }}</h4>
                                         </a>
-                                        <p>{{ substr(strip_tags($article->content), 0, 100) }}{{ strlen(strip_tags($article->content)) > 100 ? '...' : '' }}</p>
-                                        <a href="{{ $article->external_link ?? '#' }}" {{ $article->external_link ? 'target="_blank"' : '' }}>Read More</a>
+                                        <p>{{ substr(strip_tags($article->content), 0, 100) }}{{ strlen(strip_tags($article->content)) > 100 ? '...' : '' }}
+                                        </p>
+                                        <a href="{{ $article->external_link ?? '#' }}"
+                                            {{ $article->external_link ? 'target="_blank"' : '' }}>Read More</a>
                                     </div>
                                 </div>
                             </div>
                         @empty
                             <div class="col-12">
-                                <div class="alert alert-info text-center">No articles yet. <a href="/login">Login to add articles</a></div>
+                                <div class="alert alert-info text-center">No articles yet. <a href="/login">Login to
+                                        add articles</a></div>
                             </div>
                         @endforelse
                     </div>
@@ -365,18 +385,19 @@
                             <ul class="list-unstyled">
                                 <li>
                                     <figure class="mb-0 d-flex align-items-center justify-content-center">
-                                        <img src="{{ asset('template/assets/image/location-icon.png') }}" alt="location-icon"
-                                            class="img-fluid">
+                                        <img src="{{ asset('template/assets/image/location-icon.png') }}"
+                                            alt="location-icon" class="img-fluid">
                                     </figure>
                                     <div class="contact-information-content">
                                         <h5>Address:</h5>
-                                        <p class="mb-0">{{ $user->address ?? 'Contact for address information' }}</p>
+                                        <p class="mb-0">{{ $user->address ?? 'Contact for address information' }}
+                                        </p>
                                     </div>
                                 </li>
                                 <li>
                                     <figure class="mb-0 d-flex align-items-center justify-content-center">
-                                        <img src="{{ asset('template/assets/image/message-icon.png') }}" alt="message-icon"
-                                            class="img-fluid">
+                                        <img src="{{ asset('template/assets/image/message-icon.png') }}"
+                                            alt="message-icon" class="img-fluid">
                                     </figure>
                                     <div class="contact-information-content">
                                         <h5>Email:</h5>
@@ -388,7 +409,8 @@
                                 </li>
                                 <li class="mb-0">
                                     <figure class="mb-0 d-flex align-items-center justify-content-center">
-                                        <img src="{{ asset('template/assets/image/phone-icon.png') }}" alt="phone-icon" class="img-fluid">
+                                        <img src="{{ asset('template/assets/image/phone-icon.png') }}"
+                                            alt="phone-icon" class="img-fluid">
                                     </figure>
                                     <div class="contact-information-content">
                                         <h5>Phone:</h5>
@@ -455,7 +477,8 @@
         <div class="container">
             <div class="weight-footer-content text-center wow fadeInUp">
                 <figure class="">
-                    <img src="{{ asset('template/assets/image/footer-logo.png') }}" alt="footer-logo" class="img-fluid">
+                    <img src="{{ asset('template/assets/image/footer-logo.png') }}" alt="footer-logo"
+                        class="img-fluid">
                 </figure>
                 <div class="footer-navbar">
                     <ul class="list-unstyled">
@@ -491,7 +514,9 @@
                 </div>
             </div>
             <div class="copy-right-content text-center">
-                <p class="mb-0">Made with <i class="fas fa-heart" style="color: #e74c3c;"></i> by <a href="https://leknoucheaymen.com" target="_blank" style="color: #4a90e2; text-decoration: none;">Aymen Leknouche</a></p>
+                <p class="mb-0">Made with <i class="fas fa-heart" style="color: #e74c3c;"></i> by <a
+                        href="https://leknoucheaymen.com" target="_blank"
+                        style="color: #4a90e2; text-decoration: none;">Aymen Leknouche</a></p>
             </div>
         </div>
     </div>
@@ -505,8 +530,8 @@
                 </div>
                 <div class="modal-body service-model-content">
                     <figure class="mb-0">
-                        <img src="{{ asset('template/assets/image/portfolio-model-img1.jfif') }}" alt="portfolio-model-img1"
-                            class="img-fluid">
+                        <img src="{{ asset('template/assets/image/portfolio-model-img1.jfif') }}"
+                            alt="portfolio-model-img1" class="img-fluid">
                     </figure>
                     <h4>Application UI Design</h4>
                     <p class="mb-md-4 mb-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -537,8 +562,8 @@
                 </div>
                 <div class="modal-body service-model-content">
                     <figure class="mb-0">
-                        <img src="{{ asset('template/assets/image/portfolio-model-img1.jfif') }}" alt="portfolio-model-img1"
-                            class="img-fluid">
+                        <img src="{{ asset('template/assets/image/portfolio-model-img1.jfif') }}"
+                            alt="portfolio-model-img1" class="img-fluid">
                     </figure>
                     <h4>Application UI Design</h4>
                     <p class="mb-md-4 mb-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -569,8 +594,8 @@
                 </div>
                 <div class="modal-body service-model-content">
                     <figure class="mb-0">
-                        <img src="{{ asset('template/assets/image/portfolio-model-img2.jfif') }}" alt="portfolio-model-img1"
-                            class="img-fluid">
+                        <img src="{{ asset('template/assets/image/portfolio-model-img2.jfif') }}"
+                            alt="portfolio-model-img1" class="img-fluid">
                     </figure>
                     <h4>Furni furniture UI Design</h4>
                     <p class="mb-md-4 mb-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -601,8 +626,8 @@
                 </div>
                 <div class="modal-body service-model-content">
                     <figure class="mb-0">
-                        <img src="{{ asset('template/assets/image/portfolio-model-img2.jfif') }}" alt="portfolio-model-img1"
-                            class="img-fluid">
+                        <img src="{{ asset('template/assets/image/portfolio-model-img2.jfif') }}"
+                            alt="portfolio-model-img1" class="img-fluid">
                     </figure>
                     <h4>Furni furniture UI Design</h4>
                     <p class="mb-md-4 mb-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -761,8 +786,8 @@
                 </div>
                 <div class="modal-body service-model-content">
                     <figure class="mb-0">
-                        <img src="{{ asset('template/assets/image/portfolio-model-img5.png') }}" alt="portfolio-model-img1"
-                            class="img-fluid">
+                        <img src="{{ asset('template/assets/image/portfolio-model-img5.png') }}"
+                            alt="portfolio-model-img1" class="img-fluid">
                     </figure>
                     <h4>Real estate UI Design</h4>
                     <p class="mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
@@ -793,8 +818,8 @@
                 </div>
                 <div class="modal-body service-model-content">
                     <figure class="mb-0">
-                        <img src="{{ asset('template/assets/image/portfolio-model-img5.jfif') }}" alt="portfolio-model-img1"
-                            class="img-fluid">
+                        <img src="{{ asset('template/assets/image/portfolio-model-img5.jfif') }}"
+                            alt="portfolio-model-img1" class="img-fluid">
                     </figure>
                     <h4>Real estate UI Design</h4>
                     <p class="mb-md-4 mb-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -825,7 +850,8 @@
                 </div>
                 <div class="modal-body service-model-content">
                     <figure class="mb-0">
-                        <img src="{{ asset('template/assets/image/ui-ux-model-img.jpg') }}" alt="ui-ux-model-img" class="img-fluid">
+                        <img src="{{ asset('template/assets/image/ui-ux-model-img.jpg') }}" alt="ui-ux-model-img"
+                            class="img-fluid">
                     </figure>
                     <h4>Ui/Ux Design</h4>
                     <p class="mb-md-4 mb-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -854,8 +880,8 @@
                 </div>
                 <div class="modal-body service-model-content">
                     <figure class="mb-0">
-                        <img src="{{ asset('template/assets/image/web-designer-model-img.jpg') }}" alt="web-designer-model-img"
-                            class="img-fluid">
+                        <img src="{{ asset('template/assets/image/web-designer-model-img.jpg') }}"
+                            alt="web-designer-model-img" class="img-fluid">
                     </figure>
                     <h4>Web Design</h4>
                     <p class="mb-md-4 mb-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -884,8 +910,8 @@
                 </div>
                 <div class="modal-body service-model-content">
                     <figure class="mb-0">
-                        <img src="{{ asset('template/assets/image/web-development-model-img.jpg') }}" alt="web-development-model-img"
-                            class="img-fluid">
+                        <img src="{{ asset('template/assets/image/web-development-model-img.jpg') }}"
+                            alt="web-development-model-img" class="img-fluid">
                     </figure>
                     <h4>Web Development</h4>
                     <p class="mb-md-4 mb-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -914,8 +940,8 @@
                 </div>
                 <div class="modal-body service-model-content">
                     <figure class="mb-0">
-                        <img src="{{ asset('template/assets/image/App-development-model-img.JPG') }}" alt="App-development-model-img"
-                            class="img-fluid">
+                        <img src="{{ asset('template/assets/image/App-development-model-img.JPG') }}"
+                            alt="App-development-model-img" class="img-fluid">
                     </figure>
                     <h4>App Development</h4>
                     <p class="mb-md-4 mb-2">Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -1339,7 +1365,7 @@
     </script>
     <script>
         function downloadImage() {
-            source = '{{ asset("template/assets/image/cv-img.jpg") }}';
+            source = '{{ asset('template/assets/image/cv-img.jpg') }}';
             const fileName = 'test-image.png';
             var el = document.createElement("a");
             el.setAttribute("href", source);

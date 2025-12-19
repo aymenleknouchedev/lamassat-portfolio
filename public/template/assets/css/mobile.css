@@ -713,6 +713,12 @@
     .banner-main-con {
         padding-top: 30px;
     }
+    .banner-con .row {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2rem;
+        margin-top: 50px;
+    }
     .header-con {
         padding: 15px;
     }
@@ -1108,6 +1114,14 @@
     .myskils img{
         width: 150px;
         height: 150px;
+    }
+    .hero-image-circle {
+        width: 250px;
+        height: 250px;
+    }
+    .hero-image-circle figure {
+        width: 220px;
+        height: 220px;
     }
 }
 

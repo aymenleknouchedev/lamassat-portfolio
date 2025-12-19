@@ -110,5 +110,15 @@ cur.addEventListener('mouseout', function(){
   cursorinner.style.visibility="hidden";
 });
 
+// Navbar background on scroll
+window.addEventListener('scroll', function() {
+  const headerCon = document.querySelector('.header-con');
+  if (window.scrollY > 50) {
+    headerCon.classList.add('scrolled');
+  } else {
+    headerCon.classList.remove('scrolled');
+  }
+});
+
 
 
