@@ -21,6 +21,26 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'summary',
+        'photo',
+        'github',
+        'linkedin',
+        'twitter',
+        'instagram',
+        'facebook',
+        'youtube',
+        'portfolio',
+        'behance',
+        'dribbble',
+        'codepen',
+        'contact_email',
+        'phone1',
+        'phone2',
+        'telegram',
+        'whatsapp',
+        'skype',
+        'discord',
+        'viber',
     ];
 
     /**
@@ -44,5 +64,29 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    /**
+     * Get the user's skills
+     */
+    public function skills()
+    {
+        return $this->hasMany(Skill::class);
+    }
+
+    /**
+     * Get the user's projects
+     */
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
+
+    /**
+     * Get the user's reviews
+     */
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 }
