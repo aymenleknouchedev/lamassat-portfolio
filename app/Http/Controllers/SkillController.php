@@ -45,7 +45,8 @@ class SkillController extends Controller
     public function update(Request $request, Skill $skill)
     {
         // Check authorization
-        if ($skill->user_id !== Auth::id()) {
+        $user = $request->user();
+        if (!$user || $skill->user_id !== $user->id) {
             abort(403);
         }
 
@@ -66,11 +67,12 @@ class SkillController extends Controller
     /**
      * Delete a skill
      */
-    public function destroy(Skill $skill)
+    public function destroy(Request $request, Skill $skill)
     {
-        // Check authorization
-        if ($skill->user_id !== Auth::id()) {
-            abort(403);
+        // Ensure the user owns this skill
+        $user = $request->user();
+        if (!$user || $skill->user_id !== $user->id) {
+            abort(403, 'You are not authorized to delete this skill.');
         }
 
         $skill->delete();
