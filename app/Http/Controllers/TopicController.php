@@ -68,11 +68,6 @@ class TopicController extends Controller
      */
     public function destroy(Topic $topic)
     {
-        // Check authorization
-        if ($topic->user_id !== Auth::id()) {
-            abort(403);
-        }
-
         $topic->delete();
 
         return redirect()->route('topics.index')

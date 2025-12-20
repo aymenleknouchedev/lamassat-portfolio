@@ -123,11 +123,6 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        // Check authorization
-        if ($project->user_id !== Auth::id()) {
-            abort(403);
-        }
-
         // Delete image if exists
         if ($project->image) {
             Storage::disk('public')->delete($project->image);

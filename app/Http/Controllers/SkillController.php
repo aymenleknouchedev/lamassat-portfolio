@@ -69,12 +69,6 @@ class SkillController extends Controller
      */
     public function destroy(Request $request, Skill $skill)
     {
-        // Ensure the user owns this skill
-        $user = $request->user();
-        if (!$user || $skill->user_id !== $user->id) {
-            abort(403, 'You are not authorized to delete this skill.');
-        }
-
         $skill->delete();
 
         return redirect()->route('skills.index')
