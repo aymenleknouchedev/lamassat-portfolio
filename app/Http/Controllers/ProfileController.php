@@ -26,6 +26,7 @@ class ProfileController extends Controller
         // Validate input
         $validated = $request->validate([
             'name' => 'required|string|max:255',
+            'job_name' => 'nullable|string|max:255',
             'summary' => 'nullable|string|max:500',
             'photo' => 'nullable|image|mimes:jpeg,png,gif,webp|max:2048',
         ]);

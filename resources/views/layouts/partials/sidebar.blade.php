@@ -54,6 +54,12 @@
                 <span>Articles</span>
             </a>
         </li>
+        <li>
+            <a href="/contacts" class="{{ request()->path() === 'contacts' ? 'active' : '' }}">
+                <span class="icon"><i class="fas fa-envelope"></i></span>
+                <span>Contacts</span>
+            </a>
+        </li>
     </ul>
     
     <div class="sidebar-footer">

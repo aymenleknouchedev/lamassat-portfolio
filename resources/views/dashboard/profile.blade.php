@@ -83,7 +83,21 @@
                 @enderror
             </div>
 
-            <!-- Summary -->
+            <!-- Job Name -->
+            <div style="margin-bottom: 2rem;">
+                <label for="job_name" style="display: block; font-weight: bold; color: var(--blue); margin-bottom: 0.5rem;">
+                    <i class="fas fa-briefcase"></i> Job Title / Position
+                </label>
+                <input type="text"
+                    name="job_name"
+                    id="job_name"
+                    value="{{ Auth::user()->job_name ?? '' }}"
+                    placeholder="Enter your job title (e.g., Logo & Web Designer)"
+                    style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; box-sizing: border-box;">
+                @error('job_name')
+                    <small style="color: #c33; display: block; margin-top: 0.25rem;">{{ $message }}</small>
+                @enderror
+            </div>
             <div style="margin-bottom: 2rem;">
                 <label for="summary" style="display: block; font-weight: bold; color: var(--blue); margin-bottom: 0.5rem;">
                     <i class="fas fa-pen"></i> Summary / Bio
