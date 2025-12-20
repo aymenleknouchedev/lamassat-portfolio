@@ -43,7 +43,8 @@
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <script src="{{ asset('js/app.js') }}"></script>
     @stack('styles')
 </head>
 <body class="@yield('body_class')">
