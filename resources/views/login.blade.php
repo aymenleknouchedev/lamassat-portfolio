@@ -107,6 +107,10 @@
         font-family: 'Poppins', sans-serif;
         transition: all 0.3s ease;
         background-color: #f7fafc;
+        box-sizing: border-box;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     input[type="email"]:focus,
