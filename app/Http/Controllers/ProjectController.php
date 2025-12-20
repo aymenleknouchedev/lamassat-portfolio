@@ -70,11 +70,6 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        // Check authorization
-        if ($project->user_id !== Auth::id()) {
-            abort(403);
-        }
-
         // Validate input
         $validated = $request->validate([
             'title' => 'required|string|max:100',

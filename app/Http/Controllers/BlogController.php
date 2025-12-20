@@ -41,14 +41,11 @@ class BlogController extends Controller
 
     public function edit(Blog $blog)
     {
-        $this->authorize('view', $blog);
         return view('dashboard.blog-edit', ['blog' => $blog]);
     }
 
     public function update(Request $request, Blog $blog)
     {
-        $this->authorize('update', $blog);
-
         $validated = $request->validate([
             'title' => 'required|string|max:255',
             'slug' => 'nullable|string|max:255|unique:blogs,slug,' . $blog->id,
@@ -68,7 +65,6 @@ class BlogController extends Controller
 
     public function destroy(Blog $blog)
     {
-        $this->authorize('delete', $blog);
         $blog->delete();
 
         return redirect()->route('blog.index')->with('success', 'Blog post deleted successfully!');

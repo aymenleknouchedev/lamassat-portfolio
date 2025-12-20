@@ -51,11 +51,6 @@ class ReviewController extends Controller
      */
     public function update(Request $request, Review $review)
     {
-        // Check authorization
-        if ($review->user_id !== Auth::id()) {
-            abort(403);
-        }
-
         $validated = $request->validate([
             'client_name' => 'required|string|max:100',
             'client_title' => 'nullable|string|max:100',
@@ -85,11 +80,6 @@ class ReviewController extends Controller
      */
     public function destroy(Review $review)
     {
-        // Check authorization
-        if ($review->user_id !== Auth::id()) {
-            abort(403);
-        }
-
         // Delete image if exists
         if ($review->client_image) {
             Storage::disk('public')->delete($review->client_image);

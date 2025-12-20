@@ -44,11 +44,6 @@ class TopicController extends Controller
      */
     public function update(Request $request, Topic $topic)
     {
-        // Check authorization
-        if ($topic->user_id !== Auth::id()) {
-            abort(403);
-        }
-
         // Validate input
         $validated = $request->validate([
             'name' => 'required|string|max:100',

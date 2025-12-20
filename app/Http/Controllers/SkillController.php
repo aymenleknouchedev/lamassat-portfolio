@@ -44,12 +44,6 @@ class SkillController extends Controller
      */
     public function update(Request $request, Skill $skill)
     {
-        // Check authorization
-        $user = $request->user();
-        if (!$user || $skill->user_id !== $user->id) {
-            abort(403);
-        }
-
         // Validate input
         $validated = $request->validate([
             'name' => 'required|string|max:100',
