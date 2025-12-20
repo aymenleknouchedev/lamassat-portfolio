@@ -177,11 +177,6 @@
 
         <div class="container-fluid padding-side">
 
-            <a class="navbar-brand" href="index.html"><img src="{{ asset('template/images/logo.png') }}"
-                    alt="logo"></a>
-
-
-
             <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
 
@@ -203,7 +198,7 @@
 
                 <div class="offcanvas-body">
 
-                    <ul class="navbar-nav text-center align-items-center justify-content-end flex-grow-1">
+                    <ul class="navbar-nav text-center align-items-center justify-content-center flex-grow-1 w-100">
                         <li class="nav-item">
                             <a class="nav-link active pe-lg-5" aria-current="page" href="#hero">Home</a>
                         </li>
@@ -1319,13 +1314,23 @@
 
         <div class="container padding-medium pt-0" data-aos="fade-up">
 
-            <div class="text-center">
-
-                <img src="{{ asset('template/images/logo.png') }}" alt="logo">
-
-            </div>
-
-
+            <ul class="d-flex gap-5 list-unstyled justify-content-center my-3 mb-5 flex-wrap">
+                <li>
+                    <a class="nav-link p-0 text-white text-decoration-none" href="#hero">Home</a>
+                </li>
+                <li>
+                    <a class="nav-link p-0 text-white text-decoration-none" href="#achievements">Skills</a>
+                </li>
+                <li>
+                    <a class="nav-link p-0 text-white text-decoration-none" href="#portfolio">Portfolio</a>
+                </li>
+                <li>
+                    <a class="nav-link p-0 text-white text-decoration-none" href="#testimonial">Reviews</a>
+                </li>
+                <li>
+                    <a class="nav-link p-0 text-white text-decoration-none" href="#contact">Contact</a>
+                </li>
+            </ul>
 
             <ul class="d-flex gap-5 list-unstyled justify-content-center my-3 mt-5">
 
@@ -1413,7 +1418,7 @@
 
             <div class="text-center mt-5">
 
-                <p class="mb-0">? 2025. Designed with love by <a href="#"
+                <p class="mb-0">© 2025. Designed with love by <a href="#"
                         class="fw-bold text-decoration-underline">Aymen Leknouche</a></p>
 
             </div>
