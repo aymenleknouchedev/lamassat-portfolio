@@ -671,16 +671,25 @@
 
                                                 </svg>
 
+                                                <div style="margin-bottom: 1rem; color: #ff9800;">
+                                                    @for ($i = 0; $i < $review->rating; $i++)
+                                                        <i class="fas fa-star"></i>
+                                                    @endfor
+                                                    @for ($i = $review->rating; $i < 5; $i++)
+                                                        <i class="fas fa-star" style="color: #ddd;"></i>
+                                                    @endfor
+                                                </div>
+
                                                 <p class="fs-2 lh-base fst-italic fw-light">
 
-                                                    {{ $review->comment }}
+                                                    {{ $review->message }}
 
                                                 </p>
 
                                                 <div class="text-center mt-4">
 
-                                                    @if ($review->client_photo)
-                                                        <img src="{{ asset('storage/' . $review->client_photo) }}"
+                                                    @if ($review->client_image)
+                                                        <img src="{{ asset('storage/' . $review->client_image) }}"
                                                             alt="{{ $review->client_name }}" class="img-fluid rounded-circle" style="width: 80px; height: 80px; object-fit: cover;">
                                                     @else
                                                         <img src="{{ asset('template/images/commentor1.jpg') }}"
@@ -691,7 +700,18 @@
 
                                                         <p class="m-0 fw-bold">{{ $review->client_name }}</p>
 
-                                                        <p class="m-0 fw-light">{{ $review->client_location ?? 'Client' }}</p>
+                                                        <p class="m-0 fw-light">
+                                                            @if ($review->client_title)
+                                                                {{ $review->client_title }}
+                                                                @if ($review->client_company)
+                                                                    at {{ $review->client_company }}
+                                                                @endif
+                                                            @elseif ($review->client_company)
+                                                                {{ $review->client_company }}
+                                                            @else
+                                                                Client
+                                                            @endif
+                                                        </p>
 
                                                     </div>
 
