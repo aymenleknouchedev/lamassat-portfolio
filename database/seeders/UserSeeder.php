@@ -20,9 +20,9 @@ class UserSeeder extends Seeder
 
         // Create a test user for login
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'password' => bcrypt('password'),
+            'name' => 'Aymen Leknouche',
+            'email' => 'aymenleknouche.dv@gmail.com',
+            'password' => bcrypt('annexedrrh//5rm'),
         ]);
     }
 }
