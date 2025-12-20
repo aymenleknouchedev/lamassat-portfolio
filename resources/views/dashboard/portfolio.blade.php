@@ -230,17 +230,14 @@
                                 </div>
                             @endif
 
-                            <!-- Project URL -->
-                            @if ($project->url)
-                                <a href="{{ $project->url }}" target="_blank" style="color: var(--blue); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                                    <i class="fas fa-external-link-alt"></i> View Project
-                                </a>
-                            @endif
-
-                            <!-- PDF Download -->
-                            @if ($project->pdf)
-                                <a href="{{ asset('storage/' . $project->pdf) }}" target="_blank" style="color: #d32f2f; text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
-                                    <i class="fas fa-file-pdf"></i> Download Presentation
+                            <!-- Project URL / PDF Action -->
+                            @if ($project->url || $project->pdf)
+                                <a href="{{ $project->url ? $project->url : asset('storage/' . $project->pdf) }}" target="_blank" style="color: white; background: var(--blue); text-decoration: none; padding: 0.5rem 1rem; border-radius: 4px; display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-bottom: 1rem; font-weight: 500;">
+                                    @if ($project->url)
+                                        <i class="fas fa-external-link-alt"></i> View Project
+                                    @else
+                                        <i class="fas fa-file-pdf"></i> Download Presentation
+                                    @endif
                                 </a>
                             @endif
 
