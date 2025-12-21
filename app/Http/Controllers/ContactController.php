@@ -26,7 +26,7 @@ class ContactController extends Controller
                 'email' => 'required|email',
                 'phone' => 'nullable|string|max:20',
                 'subject' => 'nullable|string|max:255',
-                'message' => 'required|string|min:10',
+                'message' => 'required',
             ]);
 
             Contact::create($validated);
