@@ -24,6 +24,11 @@
 
     <title>{{ \App\Models\User::first()?->name ?? 'Portfolio' }}</title>
 
+    <!-- Favicon with Font Awesome Icon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%231a1a2e' width='100' height='100'/><text x='50' y='60' font-size='60' fill='%23ff9500' text-anchor='middle' font-family='Arial' font-weight='bold'>&lt;/&gt;</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect fill='%231a1a2e' width='180' height='180' rx='40'/><text x='90' y='110' font-size='100' fill='%23ff9500' text-anchor='middle' font-family='Arial' font-weight='bold'>&lt;/&gt;</text></svg>">
+    <meta name="theme-color" content="#1a1a2e">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 
