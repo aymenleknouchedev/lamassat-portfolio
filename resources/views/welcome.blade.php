@@ -5,7 +5,19 @@
 
 
 <head>
-
+<meta name="description" content="{{ \App\Models\User::first()?->summary ?? 'Portfolio website showcasing web design and development projects.' }}">
+    <meta name="keywords" content="portfolio, web design, development, designer, {{ \App\Models\User::first()?->job_name ?? 'designer' }}">
+    <meta name="author" content="{{ \App\Models\User::first()?->name ?? 'Portfolio' }}">
+    <meta property="og:title" content="{{ \App\Models\User::first()?->name ?? 'Portfolio' }} - {{ \App\Models\User::first()?->job_name ?? 'Designer' }}">
+    <meta property="og:description" content="{{ \App\Models\User::first()?->summary ?? 'Portfolio website showcasing web design and development projects.' }}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:image" content="{{ \App\Models\User::first() && \App\Models\User::first()->photo ? asset('storage/' . \App\Models\User::first()->photo) : asset('template/images/hero-profile.jpg') }}">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="{{ \App\Models\User::first()?->name ?? 'Portfolio' }} - {{ \App\Models\User::first()?->job_name ?? 'Designer' }}">
+    <meta property="twitter:description" content="{{ \App\Models\User::first()?->summary ?? 'Portfolio website showcasing web design and development projects.' }}">
+    <meta property="twitter:image" content="{{ \App\Models\User::first() && \App\Models\User::first()->photo ? asset('storage/' . \App\Models\User::first()->photo) : asset('template/images/hero-profile.jpg') }}">
+    <link rel="canonical" href="{{ url('/') }}">
     <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
